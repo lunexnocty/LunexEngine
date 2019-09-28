@@ -5,10 +5,9 @@ function main() {
     let app = Application.GetInstance();
     app.Init('canvas', 40);
     app.Run();
-    // new Stella('s1', new Vector3D(300, 300), 10, new Vector3D(0, 10));
-    // new Stella('s2', new Vector3D(500, 300), 10, new Vector3D(0, -10));
-    for(let i = 0; i < 50; i++) {
-        new Stella('s' + i, Vector3D.Random(450, 550, 350, 450, 0, 0), 0.01);
+    new Stella('stella', new Vector3D(540, 360), 10000);
+    for(let i = 0; i < 500; i++) {
+        new Stella('s' + i, Vector3D.Random(0, 1080, 0, 720, 0, 0), Math.random() * 40 + 10, Vector3D.Random());
     }
 }
 

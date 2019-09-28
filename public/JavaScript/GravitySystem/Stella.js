@@ -1,10 +1,11 @@
 ImportJS("./JavaScript/LunexEngine/Core/ObjectManager.js")
 
 class Stella extends MassEntity {
-    constructor(id, position, mass) {
+    constructor(id, position, mass, velocity=Vector3D.Zero()) {
         super(id, position, mass);
-        this.velocity = new Vector3D();
+        this.velocity = velocity;
         this.trace = new Array();
+        this.radius = Math.pow( 3 * this.mass / 4 * Math.PI, 1/3);
     }
     Render() {
         this.RenderSelf();
@@ -24,7 +25,7 @@ class Stella extends MassEntity {
     }
     RenderSelf() {
         this.context.beginPath();
-        this.context.arc(this.position.x, this.position.y, this.mass, 0, 2 * Math.PI);
+        this.context.arc(this.position.x, this.position.y, this.radius, 0, 2 * Math.PI);
         this.context.fillStyle = 'blue';
         this.context.closePath();
         this.context.fill();

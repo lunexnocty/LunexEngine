@@ -21,7 +21,7 @@ class GravitationSystem {
     constructor() {
         this.app = Application.GetInstance();
         // this.G = 6.67259E2 * 2;
-        this.G = 100;
+        this.G = 1;
     }
     static GetInstance() {
         if( !this.instance ) {
@@ -34,7 +34,7 @@ class GravitationSystem {
             if(obj instanceof MassEntity) {
                 Object.values(this.app.objectManager.objects).forEach( (entity) => {
                     if(entity instanceof MassEntity && !(obj === entity)) {
-                        if(obj.position.Distance(entity.position) <= (obj.mass + entity.mass)) {
+                        if(obj.position.Distance(entity.position) <= (obj.radius + entity.radius)) {
                             obj.velocity = obj.velocity.Scale(obj.mass).Plus(entity.velocity.Scale(entity.mass)).Scale(1 / (obj.mass + entity.mass));
                             if(obj.mass > entity.mass) {
                                 obj.mass += entity.mass;
