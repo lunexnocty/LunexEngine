@@ -72,7 +72,7 @@ class Vector3D {
     static OnLoad() {
         return true;
     }
-    static Random(lx=0, rx=1, ly=0, ry=1, lz=0, rz=0) {
+    static Random(lx=-1, rx=1, ly=-1, ry=1, lz=0, rz=0) {
         let x = Math.random() * (rx - lx) + lx;
         let y = Math.random() * (ry - ly) + ly;
         let z = Math.random() * (rz - lz) + lz;

@@ -48,9 +48,6 @@ class MassEntity extends ControllableObject {
     }
     Update() {
         super.Update();
-        if(this.mass == 0) {
-            this.Destory();
-        }
         this.UpdateMotion();
     }
     UpdateMotion() {

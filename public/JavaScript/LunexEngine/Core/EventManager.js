@@ -35,15 +35,10 @@ class GravitationSystem {
                 Object.values(this.app.objectManager.objects).forEach( (entity) => {
                     if(entity instanceof MassEntity && !(obj === entity)) {
                         if(obj.position.Distance(entity.position) <= (obj.radius + entity.radius)) {
-                            obj.velocity = obj.velocity.Scale(obj.mass).Plus(entity.velocity.Scale(entity.mass)).Scale(1 / (obj.mass + entity.mass));
                             if(obj.mass > entity.mass) {
-                                obj.mass += entity.mass;
-                                obj.radius = Math.pow( 3 * obj.mass / 4 * Math.PI, 1/3);
-                                entity.mass = 0;
+                                obj.Devour(entity);
                             } else {
-                                entity.mass += obj.mass;
-                                entity.radius = Math.pow( 3 * entity.mass / 4 * Math.PI, 1/3);
-                                obj.mass = 0;
+                                entity.Devour(obj);
                             }
                         }
                         else {
