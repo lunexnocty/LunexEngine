@@ -90,7 +90,7 @@ function init() {
         render();
     };
     url = "https://lunexnocty.github.io/LunexEngine/www/material.jpg";
-    requestCORSIfNotSameOrigin(image, url);
+    // requestCORSIfNotSameOrigin(image, url);
     image.src = url;
 
     gl.activeTexture(gl.TEXTURE0);
