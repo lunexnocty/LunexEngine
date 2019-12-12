@@ -5,8 +5,15 @@ class GravitySystem extends Application {
     constructor() {
         super();
     }
+}
 
-
+function CreateObject() {
+    let tag = 'Star';
+    let count = 0;
+    function next() {
+        return count++;
+    }
+    new Stella('tag' + next(), position, mass, density);
 }
 
 function main() {
