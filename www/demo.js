@@ -89,7 +89,7 @@ function init() {
         configureTexture(image);
         render();
     };
-    url = "./material.jpg";
+    url = "https://lunexnocty.github.io/LunexEngine/www/material.jpg";
     requestCORSIfNotSameOrigin(image, url);
     image.src = url;
 
