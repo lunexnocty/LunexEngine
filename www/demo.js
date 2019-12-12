@@ -89,7 +89,7 @@ function init() {
         configureTexture(image);
         render();
     };
-    url = "file:///C:/Users/lunex/project/Fuzz/Swiftshader/www/material.jpg";
+    url = "./material.jpg";
     requestCORSIfNotSameOrigin(image, url);
     image.src = url;
 
