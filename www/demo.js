@@ -58,11 +58,11 @@ function init() {
         -0.5,  0.5
     ]);
 
-    verticles.bufferId = gl.createBuffer();
-    gl.bindBuffer(gl.ARRAY_BUFFER, verticles.bufferId);
-    gl.bufferData(gl.ARRAY_BUFFER, verticles.data, gl.STATIC_DRAW);
+    // verticles.bufferId = gl.createBuffer();
+    // gl.bindBuffer(gl.ARRAY_BUFFER, verticles.bufferId);
+    // gl.bufferData(gl.ARRAY_BUFFER, verticles.data, gl.STATIC_DRAW);
     var vPos = gl.getAttribLocation(program, "vPos");
-    gl.vertexAttribPointer(vPos, 2, gl.FLOAT, false, 0, 0);
+    gl.vertexAttribPointer(vPos, 2, gl.FLOAT, false, 0, verticles.data);
     gl.enableVertexAttribArray(vPos);
 
     var texCoords = {};
@@ -73,11 +73,11 @@ function init() {
         0.0, 1.0
     ]);
 
-    texCoords.bufferId = gl.createBuffer();
-    gl.bindBuffer(gl.ARRAY_BUFFER, texCoords.bufferId);
-    gl.bufferData(gl.ARRAY_BUFFER, texCoords.data, gl.STATIC_DRAW);
+    // texCoords.bufferId = gl.createBuffer();
+    // gl.bindBuffer(gl.ARRAY_BUFFER, texCoords.bufferId);
+    // gl.bufferData(gl.ARRAY_BUFFER, texCoords.data, gl.STATIC_DRAW);
     var vTexCoord = gl.getAttribLocation(program, "vTexCoord");
-    gl.vertexAttribPointer(vTexCoord, 2, gl.FLOAT, false, 0, 0);
+    gl.vertexAttribPointer(vTexCoord, 2, gl.FLOAT, false, 0, texCoords.data);
     gl.enableVertexAttribArray(vTexCoord);
 
     //
@@ -89,8 +89,8 @@ function init() {
         configureTexture(image);
         render();
     };
-    url = "https://lunexnocty.github.io/LunexEngine/www/material.jpg";
-    // requestCORSIfNotSameOrigin(image, url);
+    url = "./material.jpg";
+    requestCORSIfNotSameOrigin(image, url);
     image.src = url;
 
     gl.activeTexture(gl.TEXTURE0);
