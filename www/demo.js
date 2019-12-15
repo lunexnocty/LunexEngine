@@ -61,7 +61,7 @@ function init() {
     // verticles.bufferId = gl.createBuffer();
     // gl.bindBuffer(gl.ARRAY_BUFFER, verticles.bufferId);
     // gl.bufferData(gl.ARRAY_BUFFER, verticles.data, gl.STATIC_DRAW);
-    var vPos = gl.getAttribLocation(program, "position");
+    var vPos = gl.getAttribLocation(program, "vPos");
     gl.vertexAttribPointer(vPos, 2, gl.FLOAT, false, 0, verticles.data);
     gl.enableVertexAttribArray(vPos);
 
