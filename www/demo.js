@@ -28,11 +28,11 @@ function configureTexture(image) {
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
 }
 
-function requestCORSIfNotSameOrigin(img, url) {
-    if ((new URL(url)).origin !== window.location.origin) {
-        img.crossOrigin = "";
-    }
-}
+// function requestCORSIfNotSameOrigin(img, url) {
+//     if ((new URL(url)).origin !== window.location.origin) {
+//         img.crossOrigin = "";
+//     }
+// }
 
 function init() {
     canvas = document.getElementById("gl-canvas");
@@ -61,7 +61,7 @@ function init() {
     // verticles.bufferId = gl.createBuffer();
     // gl.bindBuffer(gl.ARRAY_BUFFER, verticles.bufferId);
     // gl.bufferData(gl.ARRAY_BUFFER, verticles.data, gl.STATIC_DRAW);
-    var vPos = gl.getAttribLocation(program, "vPos");
+    var vPos = gl.getAttribLocation(program, "position");
     gl.vertexAttribPointer(vPos, 2, gl.FLOAT, false, 0, verticles.data);
     gl.enableVertexAttribArray(vPos);
 
@@ -90,7 +90,7 @@ function init() {
         render();
     };
     url = "./material.jpg";
-    requestCORSIfNotSameOrigin(image, url);
+    // requestCORSIfNotSameOrigin(image, url);
     image.src = url;
 
     gl.activeTexture(gl.TEXTURE0);
