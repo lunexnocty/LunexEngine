@@ -62,7 +62,7 @@ function init() {
     // gl.bindBuffer(gl.ARRAY_BUFFER, verticles.bufferId);
     // gl.bufferData(gl.ARRAY_BUFFER, verticles.data, gl.STATIC_DRAW);
     var vPos = gl.getAttribLocation(program, "vPos");
-    gl.vertexAttribPointer(vPos, 2, gl.FLOAT, false, 0, 0);
+    gl.vertexAttribPointer(vPos, 2, gl.FLOAT, false, 0, verticles.data);
     gl.enableVertexAttribArray(vPos);
 
     var texCoords = {};
@@ -77,7 +77,7 @@ function init() {
     // gl.bindBuffer(gl.ARRAY_BUFFER, texCoords.bufferId);
     // gl.bufferData(gl.ARRAY_BUFFER, texCoords.data, gl.STATIC_DRAW);
     var vTexCoord = gl.getAttribLocation(program, "vTexCoord");
-    gl.vertexAttribPointer(vTexCoord, 2, gl.FLOAT, false, 0, 0);
+    gl.vertexAttribPointer(vTexCoord, 2, gl.FLOAT, false, 0, texCoords.data);
     gl.enableVertexAttribArray(vTexCoord);
 
     //
